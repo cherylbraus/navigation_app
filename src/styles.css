@@ -1,0 +1,160 @@
+/* 1. the width/height in .app don't do anything
+2. the grid-template-columns in main don't hold
+3. can't change size of the map and keep aspect ratio (ie cut it off)
+5. Share isn't in the same box as icon and goes off side 
+6. vertical scroll should only be on left boxes, not page */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.app {
+  width: 1500px;
+  height: 100vh;
+  border: 1px solid red;
+}
+
+main {
+  font-family: "Avenir";
+  display: grid;
+  width: 100%;
+  height: inherit;
+  grid-template-columns: 4fr 5fr;
+}
+
+.rightside {
+  background-color: white;
+}
+
+.map img {
+  width: 100%;
+  height: 500px;
+  padding: 20px 25px;
+}
+
+.leftside {
+  display: grid;
+  grid-template-rows: 150px 1fr;
+  height: inherit;
+}
+
+.leftboxes {
+  background-color: #fafafa;
+  /* height: 100%; */
+  overflow-y: scroll;
+}
+
+.leftbox {
+  background-color: white;
+  margin: 20px 30px;
+  padding: 20px 25px;
+  border-radius: 10px;
+  border: 2px solid white;
+}
+
+.leftbox:hover {
+  border: 2px solid #5d88d4;
+}
+
+.topbox {
+  display: grid;
+  /* place-items: center; */
+  grid-template-columns: 60px 1fr 55px;
+  margin-bottom: 20px;
+}
+
+.icon-train {
+  height: 40px;
+  width: 40px;
+}
+
+.topbox-title-label {
+  font-size: 16px;
+  color: #4c4c4c;
+  font-weight: 600;
+}
+
+.topbox-title-sublabel {
+  font-size: 14px;
+  color: #7f7f7f;
+  font-weight: 400;
+}
+
+.topbox-price {
+  display: grid;
+  place-items: center;
+  border: 2px solid #71b493;
+  border-radius: 5px;
+  color: #71b493;
+  font-weight: 600;
+  text-align: center;
+  height: 35px;
+}
+
+.middlebox {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 20px;
+}
+
+.destination {
+  text-align: right;
+}
+
+.location {
+  font-size: 16px;
+  color: #6f6f6f;
+  font-weight: 600;
+}
+
+.time {
+  font-size: 14px;
+  color: #5d88d4;
+  font-weight: 600;
+}
+
+.bottombox {
+  display: grid;
+  grid-template-columns: 1fr 90px;
+  margin-bottom: 20px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+}
+
+.button {
+  display: grid;
+  place-items: center;
+  grid-template-columns: 30px 1fr;
+  border: 2.5px solid #f0f0f0;
+  margin: 3px;
+  padding: 5px;
+  border-radius: 15%;
+  min-width: max-content;
+}
+
+.share .button {
+  background-color: #fdf2e8;
+  color: #e2973d;
+  border-radius: 15%;
+  border: 2.5px solid #fdf2e8;
+}
+
+.button-text {
+  font-size: 14px;
+  color: #7f7f7f;
+  font-weight: 500;
+  top: 10px; /* doesn't do what I want */
+}
+
+.share .button .button-text {
+  color: #e2973d;
+}
+
+.icon {
+  height: 18px;
+}
